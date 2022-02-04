@@ -1,0 +1,24 @@
+<h1> Welocme </h1>
+
+<input [type]="showpass ? 'text' :'password'"/>
+<p (click)="showpass = !showpass"> show password </p>
+
+
+<div [ngStyle]="{'color':'red','font-size':'30px'}" [ngSwitch]="option">
+    <p *ngSwitchCase="1"> option 1 </p>
+    <p *ngSwitchCase="2"> option 2 </p>
+    <p *ngSwitchCase="3"> option 3 </p>
+    <p *ngSwitchCase="4"> option 4 </p>
+    <p *ngSwitchCase="5"> option 5 </p>
+</div>
+
+<span [class.test]="!showpass" [ngClass]="{'show-pass': showpass}"> testing </span>
+
+<br>
+<br>
+<br>
+
+<h3 *ngIf="showpass; else example2 ">Show from if </h3>
+<ng-template #example2 >
+   <h3> show from else-if </h3>
+</ng-template>
